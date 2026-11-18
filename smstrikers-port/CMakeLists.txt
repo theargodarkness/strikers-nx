@@ -631,6 +631,8 @@ if(NX)
     target_link_libraries(strikers PRIVATE nx m)
     # Increase default pthread stacks for Tint and Dawn.
     target_link_options(strikers PRIVATE -Wl,--wrap=pthread_create)
+    # Horizon's rename refuses to replace a file, which the memory card's saves rely on.
+    target_link_options(strikers PRIVATE -Wl,--wrap=rename)
     nx_generate_nacp(strikers.nacp
         NAME "Strikers, a Super Mario Strikers port"
         AUTHOR "new-coke"

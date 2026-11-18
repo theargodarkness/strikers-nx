@@ -74,6 +74,8 @@ if(UNIX)
     add_executable(switch_dvd_test switch_dvd_test.c)
     target_include_directories(switch_dvd_test PRIVATE ../include)
     add_test(NAME switch_dvd COMMAND switch_dvd_test)
+    add_executable(switch_rename_test switch_rename_test.c)
+    add_test(NAME switch_rename COMMAND switch_rename_test)
     add_test(NAME tool_switch_rebuild
              COMMAND python3 "${CMAKE_CURRENT_SOURCE_DIR}/../tools/test_switch_rebuild.py")
 endif()
